@@ -21,19 +21,23 @@ export default {
   name: 'Exercises',
   data() {
     return {
-      exercises: [
-        {
-          id: 1,
-          name: 'curls',
-        },
-        {
-          id: 2,
-          name: 'situps',
-        },
-      ],
+      exercises: [],
     };
   },
-};
+  mounted() {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    }
+
+    fetch('https://togetherfit.herokuapp.com/exercises', requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(exercise => {
+        this.exercises.push(exercise)
+      })
+      .catch(error => console.log('error', error))
+  }
+}
 </script>
 
 <style scoped>
