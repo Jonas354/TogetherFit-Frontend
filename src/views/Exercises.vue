@@ -28,16 +28,16 @@ export default {
     const requestOptions = {
       method: 'GET',
       redirect: 'follow',
-    }
+    };
 
     fetch('https://togetherfit.herokuapp.com/exercises', requestOptions)
       .then(response => response.json())
       .then(result => result.forEach(exercise => {
-        this.exercises.push(exercise)
-      })
-      .catch(error => console.log('error', error))
-  }
-}
+        this.exercises.push(exercise);
+      }))
+      .catch(error => console.log('error', error));
+  },
+};
 </script>
 
 <style scoped>
