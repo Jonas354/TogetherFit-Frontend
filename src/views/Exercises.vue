@@ -30,12 +30,19 @@ export default {
       redirect: 'follow',
     };
 
-    fetch('https://togetherfit.herokuapp.com/exercises', requestOptions)
-      .then(response => response.json())
-      .then(result => result.forEach(exercise => {
-        this.exercises.push(exercise);
-      }))
-      .catch(error => console.log('error', error));
+    fetch('https://togetherfit-frontend.herokuapp.com/exercises', requestOptions)
+      .then((response) => {
+        console.log(response);
+        response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        result.forEach((exercise) => {
+          console.log(exercise);
+          this.exercises.push(exercise);
+        });
+      })
+      .catch((error) => console.log('error', error));
   },
 };
 </script>
