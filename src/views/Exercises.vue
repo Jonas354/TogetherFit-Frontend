@@ -31,9 +31,11 @@ export default {
     };
 
     fetch('https://togetherfit.herokuapp.com/exercises', requestOptions)
-      .then((response) => { response.json(); })
-      .then((result) => { result.forEach((exercise) => { this.exercises.push(exercise); }); })
-      .catch((error) => console.log('error', error));
+      .then(response => response.json())
+      .then(result => result.forEach(exercise => {
+        this.exercises.push(exercise);
+      }))
+      .catch(error => console.log('error', error));
   },
 };
 </script>
