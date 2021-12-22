@@ -32,7 +32,7 @@ export default {
     fetch('https://togetherfit.herokuapp.com/exercises', requestOptions)
       .then((response) => {
         console.log(response);
-        response.json();
+        return response.json();
       })
       .then((result) => {
         console.log(result);
