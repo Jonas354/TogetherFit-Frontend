@@ -30,7 +30,7 @@ export default {
       method: 'GET',
       redirect: 'follow',
     };
-    fetch(endpoint, requestOptions)
+    fetch((endpoint), requestOptions)
       .then((response) => {
         console.log(response);
         return response.json();
