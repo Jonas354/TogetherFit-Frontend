@@ -25,7 +25,7 @@ export default {
     };
   },
   mounted() {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/exercises'
+    const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL} + /exercises`;
     const requestOptions = {
       method: 'GET',
       redirect: 'follow',
