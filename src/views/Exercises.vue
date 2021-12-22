@@ -25,12 +25,12 @@ export default {
     };
   },
   mounted() {
-    const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL} + /exercises`;
+    const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL}exercises`;
     const requestOptions = {
       method: 'GET',
       redirect: 'follow',
     };
-    fetch((endpoint), requestOptions)
+    fetch(endpoint, requestOptions)
       .then((response) => {
         console.log(response);
         return response.json();
