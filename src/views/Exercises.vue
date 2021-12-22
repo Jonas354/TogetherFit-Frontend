@@ -29,8 +29,7 @@ export default {
       method: 'GET',
       redirect: 'follow',
     };
-
-    fetch('https://togetherfit-frontend.herokuapp.com/exercises', requestOptions)
+    fetch('https://togetherfit.herokuapp.com/exercises', requestOptions)
       .then((response) => {
         console.log(response);
         response.json();
