@@ -1,4 +1,5 @@
 <template>
+  <div class="background-image">
   <h1>Welcome to Exercises!</h1>
   <div class="home">
     <CreateExercise/>
@@ -17,6 +18,7 @@
       </tr>
     </tbody>
   </table>
+</div>
 </template>
 
 <script>
@@ -54,5 +56,15 @@ export default {
 </script>
 
 <style scoped>
+* {
+  maring: 0;
+  padding: 0;
+}
+.background-image {
+  background-image: url("../assets/background_gym2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
 </style>
