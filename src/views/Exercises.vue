@@ -1,5 +1,8 @@
 <template>
   <h1>Welcome to Exercises!</h1>
+  <div class="home">
+    <CreateExercise/>
+  </div>
   <table class="table">
     <thead>
     <tr>
@@ -17,8 +20,11 @@
 </template>
 
 <script>
+import CreateExercise from '@/components/CreateExercise.vue';
+
 export default {
   name: 'Exercises',
+  components: { CreateExercise },
   data() {
     return {
       exercises: [],
