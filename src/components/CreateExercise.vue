@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+  <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBackdrop"
           aria-controls="offcanvasWithBackdrop">Contribute your favorite exercise
   </button>
@@ -17,7 +17,7 @@
           <label for="exerciseName" class="form-label">Exercise Name</label>
           <input type="text" class="form-control" id="exerciseName" v-model="exerciseName">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-dark btn-primary">Submit</button>
       </form>
     </div>
   </div>

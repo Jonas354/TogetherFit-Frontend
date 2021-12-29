@@ -1,14 +1,14 @@
 <template>
   <div class="background-image">
-  <h1>Welcome to Exercises!</h1>
+  <h1 style="color:whitesmoke">Welcome to Exercises!</h1>
   <div class="home">
     <CreateExercise/>
   </div>
   <table class="table">
     <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
+      <th scope="col" style="color:whitesmoke">#</th>
+      <th scope="col" style="color:whitesmoke">Name</th>
     </tr>
     </thead>
     <tbody>
@@ -66,5 +66,7 @@ export default {
   background-size: cover;
   height: 100vh;
 }
-
+.col {
+  color: whitesmoke;
+}
 </style>
