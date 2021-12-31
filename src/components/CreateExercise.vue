@@ -12,12 +12,15 @@
       </button>
     </div>
     <div class="offcanvas-body">
-      <form>
+      <form class="text-start needs-validation" novalidate>
         <div class="mb-3">
           <label for="exerciseName" class="form-label">Exercise Name</label>
-          <input type="text" class="form-control" id="exerciseName" v-model="exerciseName">
+          <input id="exerciseName" class="form-control"
+                 type="text" v-model="name" required>
         </div>
-        <button type="submit" class="btn btn-dark btn-primary">Submit</button>
+        <button type="submit" class="btn btn-dark btn-primary"
+                @click="createExercise">Create</button>
+        <button class="btn btn-warning" type="reset">Reset</button>
       </form>
     </div>
   </div>
@@ -28,10 +31,33 @@ export default {
   name: 'CreateExercise',
   data() {
     return {
-      exerciseName: '',
+      name: '',
     };
   },
+  methods: {
+    createExercise() {
+      const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL}/exercises`;
+
+      const headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      const payload = JSON.stringify({
+        name: this.name,
+      });
+
+      const requestOptions = {
+        method: 'POST',
+        headers,
+        body: payload,
+        redirect: 'follow',
+      };
+
+      fetch(endpoint, requestOptions)
+        .catch((error) => console.log('error', error));
+    },
+  },
 };
+
 </script>
 
 <style scoped>

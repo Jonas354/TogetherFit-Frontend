@@ -1,9 +1,7 @@
 <template>
   <div class="background-image">
   <h1 style="color:whitesmoke">Welcome to Exercises!</h1>
-  <div class="home">
-    <CreateExercise/>
-  </div>
+    <CreateExercise></CreateExercise>
   <table class="table">
     <thead>
     <tr>
@@ -57,7 +55,7 @@ export default {
 
 <style scoped>
 * {
-  maring: 0;
+  margin: 0;
   padding: 0;
 }
 .background-image {
