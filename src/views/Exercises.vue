@@ -9,7 +9,7 @@
       <th scope="col" style="color:whitesmoke">Name</th>
       <th scope="col" style="color:whitesmoke">Category</th>
       <th scope="col" style="color:whitesmoke">Difficulty</th>
-      <th scope="col" style="color:whitesmoke">gear</th>
+      <th scope="col" style="color:whitesmoke">Gear</th>
     </tr>
     </thead>
     <tbody>
