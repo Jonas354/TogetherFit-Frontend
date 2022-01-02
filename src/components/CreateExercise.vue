@@ -31,7 +31,7 @@
         <div class="mb-3">
           <div class="form-check">
             <input class="form-check-input" type="checkbox"
-                   id="exerciseGear" v-model="gear" required/>
+                   id="exerciseGear" v-model="gear"/>
             <label class="form-check-label" for="exerciseGear">
               Gear
             </label>
