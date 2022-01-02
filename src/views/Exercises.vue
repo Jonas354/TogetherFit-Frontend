@@ -5,14 +5,20 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col" style="color:whitesmoke">#</th>
+     <!-- <th scope="col" style="color:whitesmoke">#</th> -->
       <th scope="col" style="color:whitesmoke">Name</th>
+      <th scope="col" style="color:whitesmoke">Category</th>
+      <th scope="col" style="color:whitesmoke">Difficulty</th>
+      <th scope="col" style="color:whitesmoke">gear</th>
     </tr>
     </thead>
     <tbody>
     <tr class="col" v-for="exercise in exercises" :key="exercise.id">
-        <th scope="row">{{exercise.id}}</th>
+      <!--  <th scope="row">{{exercise.id}}</th> -->
         <td>{{exercise.name}}</td>
+        <td>{{exercise.category}}</td>
+        <td>{{exercise.difficulty}}</td>
+        <td>{{exercise.gear}}</td>
       </tr>
     </tbody>
   </table>

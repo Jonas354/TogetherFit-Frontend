@@ -12,11 +12,30 @@
       </button>
     </div>
     <div class="offcanvas-body">
-      <form class="text-start needs-validation" novalidate>
+      <form class="text-start needs-validation">
         <div class="mb-3">
           <label for="exerciseName" class="form-label">Exercise Name</label>
           <input id="exerciseName" class="form-control"
-                 type="text" v-model="name" required>
+                 type="text" v-model="name" required/>
+        </div>
+        <div class="mb-3">
+          <label for="exerciseCategory" class="form-label">Category</label>
+          <input id="exerciseCategory" class="form-control"
+                 type="text" v-model="category" required/>
+        </div>
+        <div class="mb-3">
+          <label for="exerciseDifficulty" class="form-label">Difficulty</label>
+          <input id="exerciseDifficulty" class="form-control"
+                 type="text" v-model="difficulty" required/>
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="exerciseGear" v-model="gear" required/>
+            <label class="form-check-label" for="exerciseGear">
+              Gear
+            </label>
+          </div>
         </div>
         <button type="submit" class="btn btn-dark btn-primary"
                 @click="createExercise">Create</button>
@@ -32,6 +51,9 @@ export default {
   data() {
     return {
       name: '',
+      category: '',
+      difficulty: '',
+      gear: '',
     };
   },
   methods: {
@@ -43,6 +65,9 @@ export default {
 
       const payload = JSON.stringify({
         name: this.name,
+        category: this.category,
+        difficulty: this.difficulty,
+        gear: this.gear,
       });
 
       const requestOptions = {
