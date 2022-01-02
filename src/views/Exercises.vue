@@ -2,7 +2,8 @@
   <div class="background-image">
   <h1 style="color:whitesmoke">Welcome to Exercises!</h1>
     <CreateExercise></CreateExercise>
-  <table class="table">
+    <div style="padding-left: 130px;">
+    <table class="table">
     <thead>
     <tr>
      <!-- <th scope="col" style="color:whitesmoke">#</th> -->
@@ -19,9 +20,10 @@
         <td>{{exercise.category}}</td>
         <td>{{exercise.difficulty}}</td>
         <td>{{exercise.gear}}</td>
-      </tr>
+    </tr>
     </tbody>
   </table>
+    </div>
 </div>
 </template>
 
