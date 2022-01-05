@@ -1,0 +1,63 @@
+<template>
+  <div style="padding-left: 130px; padding-top: 20px;">
+    <table class="table">
+      <thead>
+      <tr>
+        <!-- <th scope="col" style="color:whitesmoke">#</th> -->
+        <th scope="col" style="color:whitesmoke">Name</th>
+        <th scope="col" style="color:whitesmoke">Category</th>
+        <th scope="col" style="color:whitesmoke">Difficulty</th>
+        <th scope="col" style="color:whitesmoke">Gear</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="col" v-for="exercise in exercises" :key="exercise.id">
+        <!--  <th scope="row">{{exercise.id}}</th> -->
+        <td>{{exercise.name}}</td>
+        <td>{{exercise.category}}</td>
+        <td>{{exercise.difficulty}}</td>
+        <td>{{exercise.gear}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ExerciseTable',
+  components: 'CreateExercise',
+  data() {
+    return {
+      exercises: [],
+    };
+  },
+  mounted() {
+    const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL}/exercises`;
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    };
+    fetch(endpoint, requestOptions)
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        result.forEach((exercise) => {
+          console.log(exercise);
+          this.exercises.push(exercise);
+        });
+      })
+      .catch((error) => console.log('error', error));
+  },
+};
+
+</script>
+
+<style scoped>
+.col {
+  color: whitesmoke;
+}
+</style>
