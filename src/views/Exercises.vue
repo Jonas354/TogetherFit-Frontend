@@ -1,8 +1,8 @@
 <template>
   <div class="background-image">
-  <h1 style="color:whitesmoke">Welcome to Exercises!</h1>
+  <h1 style="color:whitesmoke;padding-bottom: 15px;">Let us get to work!</h1>
     <CreateExercise></CreateExercise>
-    <div style="padding-left: 130px;">
+    <div style="padding-left: 130px; padding-top: 20px;">
     <table class="table">
     <thead>
     <tr>
@@ -24,6 +24,7 @@
     </tbody>
   </table>
     </div>
+    <footer id="page-footer">Photo by Brett Jordan on Unsplash</footer>
 </div>
 </template>
 
@@ -74,5 +75,18 @@ export default {
 }
 .col {
   color: whitesmoke;
+}
+#page-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  padding: 0 5px;
+  color: whitesmoke;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

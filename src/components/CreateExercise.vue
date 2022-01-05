@@ -1,10 +1,10 @@
 <template>
   <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasWithBackdrop"
-          aria-controls="offcanvasWithBackdrop">Contribute your favorite exercise
+          data-bs-target="#offcanvas-create-exercise"
+          aria-controls="offcanvas-create-exercise">Contribute your favorite exercise
   </button>
   <div class="offcanvas offcanvas-start" tabindex="-1"
-       id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+       id="offcanvas-create-exercise" aria-labelledby="offcanvasWithBackdropLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Your favourite exercise</h5>
       <button type="button" class="btn-close text-reset"
