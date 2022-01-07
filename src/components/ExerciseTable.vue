@@ -18,7 +18,6 @@
         <td>{{exercise.difficulty}}</td>
         <td>{{exercise.gear}}</td>
       </tr>
-      </tbody>
     </table>
   </div>
 </template>
