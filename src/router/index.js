@@ -4,8 +4,8 @@ import Exercises from '@/views/Exercises.vue';
 
 const routes = [
   {
-    path: '/about',
-    name: 'About',
+    path: '/',
+    name: 'TogetherFit',
     component: About,
   },
   {
