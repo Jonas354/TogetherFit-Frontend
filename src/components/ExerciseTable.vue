@@ -1,5 +1,6 @@
 <template>
   <div style="padding-left: 130px; padding-top: 20px;">
+    <div class="table-responsive">
     <table class="table">
       <thead>
       <tr>
@@ -20,6 +21,7 @@
       </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </template>
 
@@ -59,5 +61,17 @@ export default {
 <style scoped>
 .col {
   color: whitesmoke;
+}
+.table-responsive{
+  max-height: 25em;
+}
+thead {
+  position: sticky;
+  top: 0;
+  background: rgba(30, 30, 30, 0.90);
+  z-index: 5;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 </style>
