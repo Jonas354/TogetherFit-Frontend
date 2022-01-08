@@ -5,8 +5,8 @@
       <thead>
       <tr>
         <!-- <th scope="col" style="color:whitesmoke">#</th> -->
-        <th scope="col" style="color:whitesmoke">Name</th>
-        <th scope="col" style="color:whitesmoke">Category</th>
+        <th scope="col" style="color:whitesmoke" class="header1">Name</th>
+        <th scope="col" style="color:whitesmoke" class="header2">Category</th>
         <th scope="col" style="color:whitesmoke">Difficulty</th>
         <th scope="col" style="color:whitesmoke">Gear</th>
       </tr>
@@ -14,10 +14,10 @@
       <tbody>
       <tr class="col" v-for="exercise in exercises" :key="exercise.id">
         <!--  <th scope="row">{{exercise.id}}</th> -->
-        <td>{{exercise.name}}</td>
+        <td class="text1">{{exercise.name}}</td>
         <td>{{exercise.category}}</td>
         <td>{{exercise.difficulty}}</td>
-        <td>{{exercise.gear}}</td>
+        <td>{{exercise.gear ? 'needed' : 'body weight' }}</td>
       </tr>
       </tbody>
     </table>
