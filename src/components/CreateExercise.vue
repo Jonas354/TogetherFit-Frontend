@@ -12,11 +12,14 @@
       </button>
     </div>
     <div class="offcanvas-body">
-      <form class="text-start needs-validation">
+      <form class="text-start needs-validation" novalidate>
         <div class="mb-3">
           <label for="exerciseName" class="form-label">Exercise Name</label>
           <input id="exerciseName" class="form-control"
                  type="text" v-model="name" required/>
+          <div class="invalid-feedback">
+            Please provide a name.
+          </div>
         </div>
         <div class="mb-3">
           <label for="exerciseCategory" class="form-label">Category</label>
@@ -29,6 +32,9 @@
           </select>
           <!--<input id="exerciseCategory" class="form-control"//-->
           <!--  type="text" v-model="category" required/>//-->
+          <div class="invalid-feedback">
+            Please choose a category.
+          </div>
         </div>
    <div class="mb-3">
      <label for="exerciseDifficulty" class="form-label">Difficulty</label>
@@ -40,6 +46,9 @@
        <option value="medium">medium</option>
        <option value="hard">hard</option>
      </select>
+     <div class="invalid-feedback">
+       Please choose a difficulty.
+     </div>
 </div>
 <div class="mb-3">
 <div class="form-check">
@@ -71,27 +80,50 @@ export default {
   },
   methods: {
     createExercise() {
-      const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL}/exercises`;
+      const valid = this.validate();
+      if (valid) {
+        const endpoint = `${process.env.VUE_APP_BACKEND_BASE_URL}/exercises`;
 
-      const headers = new Headers();
-      headers.append('Content-Type', 'application/json');
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
 
-      const payload = JSON.stringify({
-        name: this.name,
-        category: this.category,
-        difficulty: this.difficulty,
-        gear: this.gear,
-      });
+        const payload = JSON.stringify({
+          name: this.name,
+          category: this.category,
+          difficulty: this.difficulty,
+          gear: this.gear,
+        });
 
-      const requestOptions = {
-        method: 'POST',
-        headers,
-        body: payload,
-        redirect: 'follow',
-      };
+        const requestOptions = {
+          method: 'POST',
+          headers,
+          body: payload,
+          redirect: 'follow',
+        };
 
-      fetch(endpoint, requestOptions)
-        .catch((error) => console.log('error', error));
+        fetch(endpoint, requestOptions)
+          .catch((error) => console.log('error', error));
+      }
+    },
+    validate() {
+      let valid = true;
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation');
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            if (!form.checkValidity()) {
+              valid = false;
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+          }, false);
+        });
+      return valid;
     },
   },
 };
