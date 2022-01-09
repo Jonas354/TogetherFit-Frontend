@@ -21,7 +21,7 @@
         <div class="mb-3">
           <label for="exerciseCategory" class="form-label">Category</label>
           <select id="exerciseCategory" class="form-select" v-model="category" required>
-            <option value="" selected disabled></option>
+            <option value="" selected disabled hidden>Choose...</option>
             <option value="upper body">upper body</option>
             <option value="arms">arms</option>
             <option value="core">core</option>
@@ -35,7 +35,7 @@
      <!--<input id="exerciseDifficulty" class="form-control"-->
      <!--type="text" v-model="difficulty" required/>-->
      <select id="exerciseDifficulty" class="form-select" v-model="difficulty" required>
-       <option value="" selected disabled></option>
+       <option value="" selected disabled hidden>Choose...</option>
        <option value="low">low</option>
        <option value="medium">medium</option>
        <option value="hard">hard</option>
