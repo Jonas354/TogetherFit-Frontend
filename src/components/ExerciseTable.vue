@@ -73,7 +73,7 @@ export default {
   color: whitesmoke;
 }
 .table-responsive{
-  max-height: 22.5em;
+  max-height: 22.3em;
 }
 thead {
   position: sticky;
