@@ -1,8 +1,8 @@
 <template>
   <div class="background-image">
-  <h1 style="color:whitesmoke;padding-bottom: 15px;">Let us get to work!</h1>
+  <h1 style="color:whitesmoke;padding-bottom: 15px;">Let's get to work!</h1>
     <CreateExercise></CreateExercise>
-      <exercise-table :exercises="this.exercises"></exercise-table>
+    <exercise-table :exercises="this.exercises"></exercise-table>
     <footer id="page-footer">Photo by Brett Jordan on Unsplash</footer>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-left: 130px; padding-top: 20px;">
+  <div style="padding-left: 160px; padding-top: 20px;">
     <div class="table-responsive">
     <table class="table">
       <thead>
@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr class="col" v-for="exercise in exercises" :key="exercise.id">
+      <tr class="col" v-for="exercise in filteredExercises" :key="exercise.id">
         <!--  <th scope="row">{{exercise.id}}</th> -->
         <td class="text1">{{exercise.name}}</td>
         <td>{{exercise.category}}</td>
@@ -23,6 +23,8 @@
     </table>
     </div>
   </div>
+  <br>
+  <input class="filter" type="text" v-model="search" placeholder="Search Exercise"/>
 </template>
 
 <script>
@@ -32,6 +34,7 @@ export default {
   data() {
     return {
       exercises: [],
+      search: '',
     };
   },
   mounted() {
@@ -54,6 +57,13 @@ export default {
       })
       .catch((error) => console.log('error', error));
   },
+  computed: {
+    filteredExercises() {
+      return this.exercises.filter((exercise) => exercise.name.match(this.search)
+        || exercise.category.match(this.search)
+        || exercise.difficulty.match(this.search));
+    },
+  },
 };
 
 </script>
@@ -63,7 +73,7 @@ export default {
   color: whitesmoke;
 }
 .table-responsive{
-  max-height: 25em;
+  max-height: 22.5em;
 }
 thead {
   position: sticky;
