@@ -75,7 +75,7 @@ export default {
       name: '',
       category: '',
       difficulty: '',
-      gear: '',
+      gear: false,
     };
   },
   methods: {
