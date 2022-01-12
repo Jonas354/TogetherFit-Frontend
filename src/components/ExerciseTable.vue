@@ -59,9 +59,10 @@ export default {
   },
   computed: {
     filteredExercises() {
-      return this.exercises.filter((exercise) => exercise.name.match(this.search)
-        || exercise.category.match(this.search)
-        || exercise.difficulty.match(this.search));
+      // eslint-disable-next-line max-len
+      return this.exercises.filter((exercise) => exercise.name.toLowerCase().match(this.search.toLowerCase())
+        || exercise.category.toLowerCase().match(this.search.toLowerCase())
+        || exercise.difficulty.toLowerCase().match(this.search.toLowerCase()));
     },
   },
 };
